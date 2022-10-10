@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Col, Card, Button } from 'react-bootstrap/';
 import API from '../utils/API';
+import HashTag from "../components/HashTag.jsx"
 
 function CardPost(props) {
     const [posts, setPosts] = useState([])
@@ -30,6 +31,9 @@ function CardPost(props) {
                                     <Card.Text>
                                         {postData.body}
                                     </Card.Text>
+                                    <span>
+                                        <HashTag tags={postData.tags} />
+                                    </span>
                                     <Button variant="primary">Read More</Button>
                                 </Card.Body>
                             </Card>
